@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Propriedades computadas</title>
+</head>
+
+<body>
+    <div id="app" class="container mt-5">
+        <h3>{{mensagem}}</h3>
+        <h3>Invertido: {{invertido}}</h3>
+        <input type="text" class="form-control" v-model="mensagem">
+        <hr>
+        <button class="btn btn-primary" @click="contador++">+</button>
+        <button class="btn btn-danger" @click="contador--">-</button>
+        <h3>{{contador}}</h3>
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" :style="{'width' : contador + '%'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" :class="cor">{{contador}}%</div>
+          </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

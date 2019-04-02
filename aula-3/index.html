@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt=br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue.js - keyup, v-model e computed</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{titulo}}</h1>
+
+        <input type="text" v-model="novaFruta" @keyup.enter="addFruta">
+        <button @click="addFruta">Adicionar</button>
+        
+        <ul>
+            <!-- <li v-for="fruta of frutas">{{fruta}}</li> -->
+            <li v-for="fruta of frutas">
+                <input type="text" v-model.number="fruta.quantidade">
+                {{fruta.nome}}
+                <button @click="fruta.quantidade++">+</button>
+                <span v-if="fruta.quantidade === 0"> - Sem estoque</span>
+            </li>
+        </ul>
+        <h4>Total: {{somarFruta}}</h4>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="aula-3.js"></script>
+
+</body>
+</html>
